@@ -24,10 +24,19 @@ function App() {
     },
   ]);
 
+  // Delete Task
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
   return (
     <div className="h-screen p-10 bg-gray-100">
       <Header title="Task Manager" />
-      <Tasks tasks={tasks} />
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} onDelete={deleteTask} />
+      ) : (
+        "No Tasks to show"
+      )}
     </div>
   );
 }
