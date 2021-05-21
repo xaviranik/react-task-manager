@@ -29,13 +29,18 @@ function App() {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
+  // Toggle Reminder
+  const toggleReminder = (id) => {
+    console.log("Toggle: ", id);
+  };
+
   return (
     <div className="h-screen p-10 bg-gray-100">
       <Header title="Task Manager" />
       {tasks.length > 0 ? (
-        <Tasks tasks={tasks} onDelete={deleteTask} />
+        <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       ) : (
-        "No Tasks to show"
+        <h1 className="text-gray-500 text-xl">No Tasks to show</h1>
       )}
     </div>
   );
