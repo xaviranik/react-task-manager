@@ -49,7 +49,11 @@ function App() {
 
   return (
     <div className="h-screen p-10 bg-gray-100">
-      <Header title="Task Manager" onAdd={() => setShowAddTask(!showAddTask)} />
+      <Header
+        title="Task Manager"
+        onAdd={() => setShowAddTask(!showAddTask)}
+        showAdd={showAddTask}
+      />
       {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
