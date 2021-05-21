@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
+import AddTask from "./components/AddTask";
 import { useState } from "react";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
   return (
     <div className="h-screen p-10 bg-gray-100">
       <Header title="Task Manager" />
+      <AddTask />
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       ) : (

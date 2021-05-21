@@ -4,7 +4,7 @@ const Task = ({ task, onDelete, onToggle }) => {
   return (
     <div
       className={`bg-white p-6 mb-4 rounded-md shadow-sm cursor-pointer ${
-        task.reminder ? "border-l-4 border-blue-500" : ""
+        task.reminder ? "border-l-4 border-blue-500 shadow-md" : ""
       }`}
       onDoubleClick={() => onToggle(task.id)}
     >
