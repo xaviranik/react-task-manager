@@ -14,7 +14,7 @@ function App() {
       id: 2,
       text: "Go shopping with Bae",
       day: "Feb 9th 2021",
-      reminder: true,
+      reminder: false,
     },
     {
       id: 3,
@@ -31,7 +31,11 @@ function App() {
 
   // Toggle Reminder
   const toggleReminder = (id) => {
-    console.log("Toggle: ", id);
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      )
+    );
   };
 
   return (

@@ -3,7 +3,9 @@ import { FaTimes } from "react-icons/fa";
 const Task = ({ task, onDelete, onToggle }) => {
   return (
     <div
-      className="bg-white p-6 mb-4 rounded-md shadow-sm cursor-pointer"
+      className={`bg-white p-6 mb-4 rounded-md shadow-sm cursor-pointer ${
+        task.reminder ? "border-l-4 border-blue-500" : ""
+      }`}
       onDoubleClick={() => onToggle(task.id)}
     >
       <div className="flex justify-between items-center text-lg font-medium text-gray-600 mb-2">
